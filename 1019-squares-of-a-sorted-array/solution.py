@@ -1,19 +1,20 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        i = 0 
-        j = len(nums)-1
-        lst = [0]*len(nums)
-        p = len(lst)-1
-        while i<=j:
-            if abs(nums[i])<abs(nums[j]):
-                lst[p] = nums[j]**2
-                j-=1
-
+        ans = [x**2 for x in nums]
+        l = 0
+        r = len(ans)-1
+        an = []
+        
+        while l <= r:
+            if ans[r] > ans[l]:
+                an.append(ans[r])
+                r -= 1
             else:
-                lst[p]=nums[i]**2
-                i+=1
-            p-=1
-        return lst
+                an.append(ans[l])
+                l += 1
+        return an[::-1]
+
 
         
+            
         
