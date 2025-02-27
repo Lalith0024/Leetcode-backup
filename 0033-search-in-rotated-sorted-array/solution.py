@@ -7,11 +7,11 @@ class Solution(object):
             if nums[mid]==target:
                 return mid
             if nums[l]>nums[mid]:
-                if nums[mid] < target <= nums[h]:
+                if nums[mid] < target <= nums[h]: #if target lies between juz keeping the conditions as normal
                     l = mid+1
                 else:
                     h = mid-1
-            else:
+            else: #if nums lies in second half i.e two binary searchers
                 if nums[l] <= target < nums[mid]:
                     h = mid-1
                 else:
