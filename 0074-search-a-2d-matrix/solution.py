@@ -1,19 +1,18 @@
-from typing import List
-
-class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        
-        
-       
-        m = len(matrix)
-        n = len(matrix[0])
-        
-        
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == target:
-                    return True
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        n = len(matrix)
+        m = len(matrix[0])
+        h = (m*n)-1
+        l = 0
+        while l<=h:
+            mid = (l+h)//2
+            row = mid//m
+            col = mid%m
+            if matrix[row][col]==target:
+                return True
+            elif matrix[row][col]>target:
+                h = mid-1
+            else:
+                l = mid+1
+        return False 
                 
-        
-        return False
-
