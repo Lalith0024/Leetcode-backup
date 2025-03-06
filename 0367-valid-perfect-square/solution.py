@@ -1,8 +1,14 @@
-class Solution:
-    def isPerfectSquare(self, num: int) -> bool:
-        if num**0.5 == int(num**0.5):
-            return True
-        else:
-            return False
-        
+class Solution(object):
+    def isPerfectSquare(self, num):
+        low = 1
+        high = num
+        while low<=high:
+            mid = (high+low)//2
+            if mid*mid==num:
+                return True
+            elif mid*mid>num:
+                high = mid-1
+            else:
+                low  = mid+1
+        return False
         
