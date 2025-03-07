@@ -1,5 +1,5 @@
-class Solution(object):
-    def search(self, nums, target):
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
         l = 0
         h = len(nums)-1
         while l<=h:
@@ -7,15 +7,14 @@ class Solution(object):
             if nums[mid]==target:
                 return mid
             if nums[l]>nums[mid]:
-                if nums[mid] < target <= nums[h]: #if target lies between juz keeping the conditions as normal
+                if nums[mid] <= target <= nums[h]: #if target lies between juz keeping the conditions as normal
                     l = mid+1
                 else:
                     h = mid-1
             else: #if nums lies in second half i.e two binary searchers
-                if nums[l] <= target < nums[mid]:
+                if nums[l] <= target <= nums[mid]:
                     h = mid-1
                 else:
                     l = mid+1
         return -1
-
         
