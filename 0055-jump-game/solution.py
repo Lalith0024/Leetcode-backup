@@ -1,9 +1,10 @@
-class Solution(object):
-    def canJump(self, nums):
-        maxi_idx = 0
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        maxReach = 0
         for i in range(len(nums)):
-            if i>maxi_idx:
-                return False
-            maxi_idx = max(maxi_idx,(i+nums[i]))
-        return True
-        #try with recursion
+            if i > maxReach:
+                return False  # Cannot proceed further
+            maxReach = max(maxReach, i + nums[i])
+            if maxReach >= len(nums) - 1:
+                return True  # Reached or surpassed last index
+        return False
