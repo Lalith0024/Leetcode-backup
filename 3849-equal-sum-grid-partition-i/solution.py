@@ -1,0 +1,29 @@
+class Solution:
+    def canPartitionGrid(self, grid):
+        m, n = len(grid), len(grid[0])
+        
+        total = sum(sum(row) for row in grid)
+        
+        if total % 2 != 0:
+            return False
+        
+        target = total // 2
+        
+        row_sum = 0
+        for i in range(m - 1):
+            row_sum += sum(grid[i])
+            if row_sum == target:
+                return True
+        
+        col_sum = [0] * n
+        for j in range(n):
+            for i in range(m):
+                col_sum[j] += grid[i][j]
+        
+        curr = 0
+        for j in range(n - 1):
+            curr += col_sum[j]
+            if curr == target:
+                return True
+        
+        return False
