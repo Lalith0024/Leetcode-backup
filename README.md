@@ -19,4 +19,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3501-maximize-active-section-with-trade-ii](https://github.com/Lalith0024/Leetcode-backup/tree/master/3501-maximize-active-section-with-trade-ii) |
+## Math
+|  |
+| ------- |
+| [3536-maximum-product-of-two-digits](https://github.com/Lalith0024/Leetcode-backup/tree/master/3536-maximum-product-of-two-digits) |
+## Sorting
+|  |
+| ------- |
+| [3536-maximum-product-of-two-digits](https://github.com/Lalith0024/Leetcode-backup/tree/master/3536-maximum-product-of-two-digits) |
 <!---LeetCode Topics End-->
